@@ -297,11 +297,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: _isLoading
-                            ? null
-                            : () {
-                                // TODO: Navigate to sign up screen
-                              },
+                        onPressed: () {
+                          handleStatus(400);
+                        },
+
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(fontWeight: FontWeight.bold),
@@ -347,5 +346,18 @@ class _SocialButton extends StatelessWidget {
         backgroundColor: isDark ? Colors.grey[800] : Colors.white,
       ),
     );
+  }
+}
+
+void handleStatus(int statusCode) {
+  switch (statusCode) {
+    case 200:
+      print("Success");
+    case int code when code >= 400 && code < 500:
+      print("Client Error: $code");
+    case int code when code >= 500:
+      print("Server Error: $code");
+    default:
+      print("Unknown Status");
   }
 }

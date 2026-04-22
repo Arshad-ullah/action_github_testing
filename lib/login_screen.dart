@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -65,7 +66,26 @@ class _LoginScreenState extends State<LoginScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey[900] : Colors.grey[50],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              themeNotifier.value =
+                  themeNotifier.value == ThemeMode.light
+                      ? ThemeMode.dark
+                      : ThemeMode.light;
+            },
+            icon: Icon(
+              themeNotifier.value == ThemeMode.dark
+                  ? Icons.light_mode_rounded
+                  : Icons.dark_mode_rounded,
+            ),
+          ),
+        ],
+      ),
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -81,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Icon(
                     Icons.lock_rounded,
                     size: 80,
-                    color: isDark ? Colors.amber : Colors.deepPurple,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   const SizedBox(height: 24),
                   Text(
@@ -120,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               borderRadius: BorderRadius.circular(16),
                             ),
                             filled: true,
-                            fillColor: isDark ? Colors.grey[800] : Colors.white,
+                            fillColor: Theme.of(context).colorScheme.surface,
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -159,7 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               borderRadius: BorderRadius.circular(16),
                             ),
                             filled: true,
-                            fillColor: isDark ? Colors.grey[800] : Colors.white,
+                            fillColor: Theme.of(context).colorScheme.surface,
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -181,7 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               children: [
                                 Checkbox(
                                   value: _rememberMe,
-                                  activeColor: Colors.deepPurple,
+                                  activeColor: Theme.of(context).colorScheme.primary,
                                   onChanged: _isLoading
                                       ? null
                                       : (value) => setState(
@@ -209,8 +229,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: ElevatedButton(
                             onPressed: _isLoading ? null : _handleLogin,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurple,
-                              foregroundColor: Colors.white,
+                              backgroundColor: Theme.of(context).colorScheme.primary,
+                              foregroundColor: Theme.of(context).colorScheme.onPrimary,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16),
                               ),
@@ -343,7 +363,7 @@ class _SocialButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         side: BorderSide(color: isDark ? Colors.grey[700]! : Colors.grey[300]!),
-        backgroundColor: isDark ? Colors.grey[800] : Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.surface,
       ),
     );
   }

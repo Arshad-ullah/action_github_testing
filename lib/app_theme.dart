@@ -8,6 +8,7 @@ class AppTheme {
       headlineLarge: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.bold,
+
         letterSpacing: -0.5,
       ),
       bodyLarge: TextStyle(fontSize: 16, letterSpacing: 0.15),
@@ -18,10 +19,12 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       colorScheme: ColorScheme.fromSeed(
+        secondary: Colors.amber,
         seedColor: Colors.lightBlue,
         brightness: Brightness.light,
       ),
       useMaterial3: true,
+
       textTheme: _textTheme,
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
@@ -42,6 +45,7 @@ class AppTheme {
   static ThemeData get darkTheme {
     return ThemeData(
       colorScheme: ColorScheme.fromSeed(
+        secondary: Colors.amber,
         seedColor: _seedColor,
         brightness: Brightness.dark,
       ),

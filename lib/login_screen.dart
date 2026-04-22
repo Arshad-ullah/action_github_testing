@@ -72,10 +72,9 @@ class _LoginScreenState extends State<LoginScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              themeNotifier.value =
-                  themeNotifier.value == ThemeMode.light
-                      ? ThemeMode.dark
-                      : ThemeMode.light;
+              themeNotifier.value = themeNotifier.value == ThemeMode.light
+                  ? ThemeMode.dark
+                  : ThemeMode.light;
             },
             icon: Icon(
               themeNotifier.value == ThemeMode.dark
@@ -101,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Icon(
                     Icons.lock_rounded,
                     size: 80,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                   const SizedBox(height: 24),
                   Text(
@@ -201,7 +200,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               children: [
                                 Checkbox(
                                   value: _rememberMe,
-                                  activeColor: Theme.of(context).colorScheme.primary,
+                                  activeColor: Theme.of(
+                                    context,
+                                  ).colorScheme.primary,
                                   onChanged: _isLoading
                                       ? null
                                       : (value) => setState(
@@ -229,8 +230,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: ElevatedButton(
                             onPressed: _isLoading ? null : _handleLogin,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Theme.of(context).colorScheme.primary,
-                              foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                              backgroundColor: Theme.of(
+                                context,
+                              ).colorScheme.primary,
+                              foregroundColor: Theme.of(
+                                context,
+                              ).colorScheme.onPrimary,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16),
                               ),
@@ -381,4 +386,3 @@ void handleStatus(int statusCode) {
       print("Unknown Status");
   }
 }
-

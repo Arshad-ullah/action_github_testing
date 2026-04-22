@@ -115,6 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     'Sign in to continue',
                     textAlign: TextAlign.center,
+
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       color: isDark ? Colors.grey[400] : Colors.grey[600],
                     ),

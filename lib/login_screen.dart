@@ -243,7 +243,7 @@ class _FormContent extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       filled: true,
-                      fillColor: Theme.of(context).colorScheme.surface,
+                      fillColor: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {

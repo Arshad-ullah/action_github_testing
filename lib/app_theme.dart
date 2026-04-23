@@ -5,14 +5,20 @@ class AppTheme {
 
   static TextTheme get _textTheme {
     return const TextTheme(
-      headlineLarge: TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
+      // TITLES
+      titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+      titleMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+      titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
 
-        letterSpacing: -0.5,
-      ),
-      bodyLarge: TextStyle(fontSize: 16, letterSpacing: 0.15),
-      labelLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+      // BODY
+      bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+      bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+      bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+
+      // LABELS
+      labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+      labelMedium: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+      labelSmall: TextStyle(fontSize: 11, fontWeight: FontWeight.w500),
     );
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/app_theme.dart';
-import 'package:my_app/responsive.dart';
+import 'package:my_app/typegraph.dart';
 
 void main() {
   // debugPrintRebuildDirtyWidgets = true;
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: currentMode,
-          home: const ResponsiveScreen(),
+          home: const TypographyDemoScreen(),
         );
       },
     );

@@ -4,7 +4,9 @@ class AppTheme {
   static const Color _seedColor = Colors.deepPurple;
 
   static TextTheme get _textTheme {
+    
     return const TextTheme(
+    
       // TITLES
       titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
       titleMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
@@ -24,6 +26,7 @@ class AppTheme {
 
   static ThemeData get lightTheme {
     return ThemeData(
+      
       colorScheme: ColorScheme.fromSeed(
         secondary: Colors.amber,
         seedColor: Colors.lightBlue,

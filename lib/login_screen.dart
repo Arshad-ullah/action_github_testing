@@ -59,6 +59,8 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  void showData() {}
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;

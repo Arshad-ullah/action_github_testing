@@ -1,46 +1,8 @@
-# name: Flutter APK Build & Release
-
-# on:
-#   push:
-#     branches: [ "main" ]
-#     tags: [ 'v*' ]
-#   pull_request:
-#     branches: [ "main" ]
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v4
-
-#       # ✅ FIXED: Proper Flutter setup
-#       - name: Set up Flutter
-#         uses: subosito/flutter-action@v2
-#         with:
-#           channel: 'stable'      # ← Only channel, no 'stable' as version
-#           cache: true
-
-#       - name: Install dependencies
-#         run: flutter pub get
-
-#       - name: Build Release APK
-#         run: flutter build apk --release --android-skip-build-dependency-validation
-
-#       - name: Upload APK as Artifact
-#         uses: actions/upload-artifact@v4
-#         with:
-#           name: app-release.apk
-#           path: build/app/outputs/flutter-apk/app-release.apk
-#           retention-days: 7
-
-#       - name: Create GitHub Release
-#         if: startsWith(github.ref, 'refs/tags/')
-#         uses: softprops/action-gh-release@v2
-#         with:
-#           files: build/app/outputs/flutter-apk/app-release.apk
-#           draft: false
-#           prerelease: false
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+name: first-workflow
+on: workflow_dispatch
+jobs:
+  first-job: #job name
+    runs-on: ubuntu-22.04 # run on which machine
+    steps:
+      - name: simple-print
+        run: echo "Hello testing"

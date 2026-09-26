@@ -6,3 +6,9 @@ jobs:
     steps:
       - name: simple-print
         run: echo "Hello testing"
+
+  second-job:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: second-print
+        run: echo "This is second test project"

@@ -39,4 +39,4 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: github
-        run: echo "${GITHUB_ACTION}"
+        run: echo "${GITHUB_REPOSITORY}"

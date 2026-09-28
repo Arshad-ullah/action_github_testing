@@ -51,3 +51,4 @@ jobs:
           echo "Run Number: $GITHUB_RUN_NUMBER"
           echo "Os system $RUNNER_OS"
           echo "${{secrets.FIREBASE_TOKEN}}"
+          echo "${{ secrets.FIREBASE_TOKEN }}"

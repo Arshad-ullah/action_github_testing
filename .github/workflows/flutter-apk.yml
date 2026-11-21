@@ -1,54 +1,15 @@
-# name: build-apk
-# on: workflow_dispatch
-# jobs:
-#   build-apk:
-#     runs-on: ubuntu-22.04
-#     steps:
-#       - name: clone-code
-#         uses: actions/checkout@v7
-
-#       # setup flutter
-#       - name: Setup Flutter
-#         uses: subosito/flutter-action@v2
-#         with:
-#           channel: stable
-
-
-#       - name: Get dependancy
-
-#         run: flutter pub get
-
-#             # --------------------------------------------------
-#       # Build APK
-#       # --------------------------------------------------
-#       - name: Build APK
-#         run: flutter build apk --release
-
-#       - name: Upload a Build Artifact
-#         uses: actions/upload-artifact@v7.0.1
-#         with:
-#           name: flutter-apk
-#           path: build/app/outputs/flutter-apk/app-release.apk
-      
-        
-
-name: built-in
+name: first-workflow
 on: workflow_dispatch
 jobs:
-  first-job:
-    runs-on: ubuntu-24.04
-    steps:
-      - name: github
-        run: |
-          echo "Repository: $GITHUB_REPOSITORY"
-          echo "Owner: $GITHUB_REPOSITORY_OWNER"
-          echo "Branch: $GITHUB_REF_NAME"
-          echo "Commit: $GITHUB_SHA"
-          echo "Actor: $GITHUB_ACTOR"
-          echo "Event: $GITHUB_EVENT_NAME"
-          echo "Workspace: $GITHUB_WORKSPACE"
-          echo "Run ID: $GITHUB_RUN_ID"
-          echo "Run Number: $GITHUB_RUN_NUMBER"
-          echo "Os system $RUNNER_OS"
-          echo "${{secrets.FIREBASE_TOKEN}}"
-          echo "${{ secrets.FIREBASE_TOKEN }}"
+  firstJob:
+        runs-on: ubuntu-22.04
+        steps:
+          - name: build
+            run: echo "Build image..."
+          - name: test
+            run: echo "Hello testing"
+
+
+    
+
+      

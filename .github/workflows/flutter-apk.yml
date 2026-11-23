@@ -1,13 +1,21 @@
-name: first-workflow
-on: workflow_dispatch
+name: flutter-ci
+on:
+  pull_request:
+  push: 
+  workflow_dispatch: 
+
+permissions:
+  contents: read
+
 jobs:
-  firstJob:
-        runs-on: ubuntu-22.04
-        steps:
-          - name: build
-            run: echo "Build image..."
-          - name: test
-            run: echo "Hello testing"
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: c2
+        run: echo "Hello workd"
+      - name: c3
+        run: echo "Testing"
+        
 
 
     

@@ -1,3 +1,4 @@
+
 name: flutter-ci
 
 on:
@@ -5,16 +6,34 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch: 
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  first-job:
-    ru-on: ubuntu-latest
+  flutter-checks:
+    name: Flutter checks
+    runs-on: ubuntu-latest
     steps:
-      - name: c2
-        run: echo "Hello world"
-      - name: c3
-        r: echo "Testing"
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.6
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Check Dart formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze Flutter project
+        run: flutter analyze
+
+      - name: Run Flutter tests
+        run: flutter test

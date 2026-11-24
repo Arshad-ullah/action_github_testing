@@ -1,23 +1,19 @@
 name: flutter-ci
+
 on:
+  push:
+    branches: [main]
   pull_request:
-  push: 
- 
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
   first-job:
-    runs-on: ubuntu-latest
+    ru-on: ubuntu-latest
     steps:
       - name: c2
-        run: echo "Hello workd"
+        run: echo "Hello world"
       - name: c3
-        run: echo "Testing"
-        
-
-
-    
-
-      
+        r: echo "Testing"

@@ -1,20 +1,9 @@
 name: flutter-ci
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch: 
-
-permissions:
-  contents: read
+on: workflow_dispatch
 
 jobs:
-  first-job:
-    ru-on: ubuntu-latest
+  flutter-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: c2
-        run: echo "Hello world"
-      - name: c3
-        r: echo "Testing"
+      - name: first
+        run: echo "hello"
